@@ -17,46 +17,28 @@ public class Ejercicio03 {
     public static void main(String[] args){
         
         Scanner sc=new Scanner(System.in);
-        System.out.println("Introduce la ruta del directorio a borrar");
-        String dir=sc.nextLine();
-        File del=new File(dir);
-        if(!del.isDirectory()){
-            System.out.println("No es un directorio valido");
-        } else {
-            if(!dir.isEmpty()){
-                //System.out.println(dir);
-                //System.out.println(entrar(del.getAbsolutePath()));
-                borrar(dir);
-            }
-            /*del.delete();
-            if(!del.exists()){
-                System.out.println("Borrado con exito");
+        System.out.println("Introduce el directorio a borrar");
+        String ruta=sc.nextLine();
+        borrarCarpeta(new File(ruta));
+    }
+    private static void borrarCarpeta(File archivo) {
+        
+        if(archivo.isDirectory()){            
+            if(archivo.list().length==0){
+                archivo.delete();
             } else {
-                System.out.println("No borrado");
-            }*/
-        }
-    }
-    
-    public static String entrar(String ruta){
-        
-        File dir=new File(ruta);
-        String[] dentro=dir.list();
-        return ruta+"\\"+dentro[0];
-    }
-    
-    public static void borrar(String ruta){
-        
-        File dir=new File(ruta);
-        String[] borrar=dir.list();
-        for(int i=0; i<borrar.length; i++){
-            File ter=new File(ruta+"\\"+borrar[i]);
-            if(ter.isFile()){
-                ter.delete();
+                String[] prueba=archivo.list();
+                for(int i=0; i<prueba.length; i++){
+                    File borrar=new File(archivo.getAbsoluteFile()+"\\"+prueba[i
+                        ]);
+                    borrarCarpeta(borrar);
+                }
+                if(archivo.list().length==0){
+                   archivo.delete();  
+                }
             }
+        } else {
+            archivo.delete();            
         }
     }
 }
-//C:\Users\Juanra\Desktop\prueba\prueba2
-
-//Borra los ficheros, entra en los directorios, falta que entre los borre,
-//salga y borre el directorio.
