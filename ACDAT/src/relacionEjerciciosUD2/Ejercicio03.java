@@ -20,6 +20,7 @@ public class Ejercicio03 {
         System.out.println("Introduce el directorio a borrar");
         String ruta=sc.nextLine();
         borrarCarpeta(new File(ruta));
+        sc.close();
     }
     private static void borrarCarpeta(File archivo) {
         

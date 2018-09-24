@@ -40,7 +40,7 @@ public class Ejercicio01 {
                         + "******************************");
             }    
         }
-        
+        sc.close();
     }
 }
 //C:\Users\Juanra\Desktop\prueba

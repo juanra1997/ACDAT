@@ -52,6 +52,7 @@ public class Ejercicio02 {
                     + "******************************");
             }
         }
+        sc.close();
     }
 }
 //C:\Users\Juanra\Desktop\prueba
