@@ -21,7 +21,7 @@ public class CrearNumeros {
     
     public static void main(String[] args){
         
-        File archivo=new File("D:\\2º DAM\\CURSO\\ACDAT\\Ficheros\\num.txt");
+        File archivo=new File("num.txt");
         if(!archivo.exists()){
             try {
                 archivo.createNewFile();

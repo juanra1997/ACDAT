@@ -20,8 +20,8 @@ public class Ejemplo02 {
     
     public static void main(String[] args){
         
-        File ficheroIn=new File("D:\\2º DAM\\CURSO\\ACDAT\\Ficheros\\num.txt");
-        File ficheroOut=new File("D:\\2º DAM\\CURSO\\ACDAT\\Ficheros\\prueba.xml");
+        File ficheroIn=new File("num.txt");
+        File ficheroOut=new File("prueba.xml");
         DocumentBuilderFactory factory=DocumentBuilderFactory.newInstance();
         Source source;
         Result result;

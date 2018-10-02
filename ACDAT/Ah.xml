@@ -1,0 +1,6 @@
+<Empleados>
+	<Empleado id="1">
+		<Nombre>Juan</Nombre>
+		<Salario comision="10">1000</Salario>
+	</Empleado>
+</Empleados>

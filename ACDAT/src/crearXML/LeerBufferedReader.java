@@ -20,7 +20,7 @@ public class LeerBufferedReader {
         
         FileReader fe = null;
 		try {
-			fe = new FileReader("D:\\2º DAM\\CURSO\\ACDAT\\Ficheros\\num.txt");
+			fe = new FileReader("num.txt");
 		} catch (IOException e2) {
 			// TODO Auto-generated catch block
 			e2.printStackTrace();

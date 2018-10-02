@@ -19,8 +19,8 @@ public class Ejemplo01 {
     
     public static void main(String[] args) throws IOException {
         //Rutas de los ficheros en disco origen y destino
-        File ficheroIn=new File("C:\\Users\\Juanra\\Desktop\\num.txt");
-        File ficheroOut=new File("C:\\Users\\Juanra\\Desktop\\prueba.xml");
+        File ficheroIn=new File("num.txt");
+        File ficheroOut=new File("prueba.xml");
         
         //RandomAccessFile file=new RandomAccessFile(ficheroIn, "r");//Fichero de accesso aleatorio
         
