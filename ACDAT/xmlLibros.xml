@@ -11,13 +11,13 @@
 		<Editorial>ED2</Editorial>
 	</Libro>
 	<Libro ISBN="3">
-		<Titulo>El universo conocido</Titulo>
+		<Titulo>El universo conocido 2</Titulo>
 		<Paginas>300</Paginas>
-		<Editorial>ED1</Editorial>
+		<Editorial>ED3</Editorial>
 	</Libro>
 	<Libro ISBN="4">
-		<Titulo>El origen del universo</Titulo>
+		<Titulo>El origen del universo 2</Titulo>
 		<Paginas>100</Paginas>
-		<Editorial>ED2</Editorial>
+		<Editorial>ED4</Editorial>
 	</Libro>
 </Libros>

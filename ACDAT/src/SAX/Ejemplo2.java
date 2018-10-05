@@ -48,7 +48,7 @@ public class Ejemplo2{
                 System.out.println();
             }
             
-            System.out.println("Ejercicio 1: ISBN Impares\n");
+            /*System.out.println("Ejercicio 1: ISBN Impares\n");
             
             for(int i=0; i<array.size(); i++){
                 
@@ -74,7 +74,7 @@ public class Ejemplo2{
                     System.out.println("EDITORIAL: "+array.get(i).getEditorial());
                     System.out.println();
                 }
-            }
+            }*/
             
         } catch (SAXException ex) {
             
@@ -88,7 +88,7 @@ public class Ejemplo2{
 class GestionContenido1 extends DefaultHandler {
     
     private String titulo, editorial, ISBN, pag;
-    private int cont=0;
+    //private int cont=0;
     static ArrayList<Libro> array=new ArrayList<>();
     
     public GestionContenido1(){
@@ -110,20 +110,22 @@ class GestionContenido1 extends DefaultHandler {
     public void startElement(String uri, String nombre, String nombreC, Attributes atts) throws SAXException {
         
         for(int i=0;i<atts.getLength();i++){  
-            if(cont==1){
-                ISBN=atts.getValue(i);
-            } 
+            //if(cont==1){
+                if(atts.getQName(i).equals("ISBN")){
+                    ISBN=atts.getValue(i);
+                }
+            //} 
         }
-        cont++;
+        //cont++;*/
     }
     
     @Override
     public void endElement(String uri, String nombre, String nombreC) throws SAXException {
         
-        if(cont==5){
+        /*if(cont==5){
             array.add(new Libro(titulo, ISBN, pag, editorial));
             cont=1;
-        }
+        }*/
     }
     
     @Override
@@ -132,7 +134,7 @@ class GestionContenido1 extends DefaultHandler {
         String car=new String(ch, inicio, longitud);
         car=car.replaceAll("[\t\n]", "");//Quitamos los saltos de linea
         //car=car.replaceAll(" ", "");//Quitamos espacios en blanco
-        if(!car.isEmpty()){
+        /*if(!car.isEmpty()){
             if(cont==3){
                 titulo=car;
             }
@@ -142,7 +144,7 @@ class GestionContenido1 extends DefaultHandler {
             if(cont==5){
                 editorial=car;
             }
-        }  
+        } */ 
     }
 
     public static ArrayList<Libro> getArray() {

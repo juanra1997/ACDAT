@@ -20,10 +20,12 @@ import org.xml.sax.helpers.XMLReaderFactory;
  */
 public class Ejercicio2 {
     
-    static ArrayList<Libro1> array=new ArrayList<>();
+    //static ArrayList<Libro1> array=new ArrayList<>();
     
     public static void main(String[] args){
         try {
+            
+            System.out.println("Ejercicio 2: Libros con mas de 150 paginas\n");
             
             XMLReader procesadorXML=XMLReaderFactory.createXMLReader();
             GestionContenido gestor=new GestionContenido();
@@ -32,11 +34,11 @@ public class Ejercicio2 {
             InputSource fileXML=new InputSource("xmlLibros.xml");
             procesadorXML.parse(fileXML);   
             
-            array=GestionContenido.getArray();
+            //array=GestionContenido.getArray();
 
-            System.out.println("Ejercicio 2: Libros con mas de 150 paginas\n");
+            //System.out.println("Ejercicio 2: Libros con mas de 150 paginas\n");
             
-            for(int i=0; i<array.size(); i++){
+            /*for(int i=0; i<array.size(); i++){
                 
                 if(Integer.parseInt(array.get(i).getPag())>150){
                     System.out.println("Libro: "+(i+1));
@@ -46,7 +48,7 @@ public class Ejercicio2 {
                     System.out.println("EDITORIAL: "+array.get(i).getEditorial());
                     System.out.println();
                 }
-            }
+            }*/
             
         } catch (SAXException ex) {
             
@@ -59,9 +61,8 @@ public class Ejercicio2 {
 }
 class GestionContenido extends DefaultHandler {
     
-    private String titulo, editorial, ISBN, pag;
-    private int cont=0;
-    static ArrayList<Libro1> array=new ArrayList<>();
+    private String titulo, editorial, ISBN, pag, etiqueta;
+    //static ArrayList<Libro1> array=new ArrayList<>();
     
     public GestionContenido(){
         
@@ -81,21 +82,23 @@ class GestionContenido extends DefaultHandler {
     @Override
     public void startElement(String uri, String nombre, String nombreC, Attributes atts) throws SAXException {
         
-        for(int i=0;i<atts.getLength();i++){  
-            if(cont==1){
-                ISBN=atts.getValue(i);
-            } 
+        etiqueta=nombre;
+        if(etiqueta.equals("Libro")){
+            for(int i=0;i<atts.getLength();i++){  
+                if(atts.getQName(0).equals("ISBN")){
+                    ISBN=atts.getValue(0);
+                }
+            }   
         }
-        cont++;
     }
     
     @Override
     public void endElement(String uri, String nombre, String nombreC) throws SAXException {
         
-        if(cont==5){
+        /*if(nombre.equals("Libro")){
             array.add(new Libro1(titulo, ISBN, pag, editorial));
-            cont=1;
-        }
+        }*/
+        
     }
     
     @Override
@@ -104,25 +107,34 @@ class GestionContenido extends DefaultHandler {
         String car=new String(ch, inicio, longitud);
         car=car.replaceAll("[\t\n]", "");//Quitamos los saltos de linea
         if(!car.isEmpty()){
-            if(cont==3){
-                titulo=car;
-            }
-            if(cont==4){
-                car=car.replaceAll(" ", "");//Quitamos espacios en blanco de los posibles enteros
-                pag=car;
-            }
-            if(cont==5){
-                editorial=car;
+            
+            switch(etiqueta){
+                case "Titulo":
+                    titulo=car;
+                    break;
+                case "Editorial":
+                    editorial=car;
+                    if(Integer.parseInt(pag)>150){
+                        System.out.println("Titulo: "+titulo);
+                        System.out.println("ISBN: "+ISBN);
+                        System.out.println("PAGINAS: "+pag);
+                        System.out.println("EDITORIAL: "+editorial);
+                        System.out.println();
+                    }
+                    break;
+                case "Paginas":
+                    pag=car;
+                    break;
             }
         }  
     }
 
-    public static ArrayList<Libro1> getArray() {
+    /*public static ArrayList<Libro1> getArray() {
         return array;
-    }
+    }*/
 }
 
-class Libro1 {
+/*class Libro1 {
     
     private String titulo, editorial, pag, ISBN;
     
@@ -165,4 +177,4 @@ class Libro1 {
     public void setISBN(String ISBN) {
         this.ISBN = ISBN;
     }
-}
+}*/
