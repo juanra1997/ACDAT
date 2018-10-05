@@ -6,6 +6,7 @@
 package SAX;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.xml.sax.Attributes;
@@ -19,24 +20,23 @@ import org.xml.sax.helpers.XMLReaderFactory;
 
 /**
  *
- * @author windiurno
+ * @author Juanra
  */
 public class Ejemplo{
     
     public static void main(String[] args){
         try {
-            //Crear el procesador/analizador (el que lee el xml)
+            
             XMLReader procesadorXML=XMLReaderFactory.createXMLReader();
             GestionContenido gestor=new GestionContenido();
             procesadorXML.setContentHandler(gestor);
-            
-            InputSource fileXML=new InputSource("Ah.xml");
-            procesadorXML.parse(fileXML);
+            InputSource fileXML=new InputSource("xmlLibros.xml");
+            procesadorXML.parse(fileXML);   
         } catch (SAXException ex) {
-            //Logger.getLogger(Ejemplo.class.getName()).log(Level.SEVERE, null, ex);
-            System.out.println("ERROR: SAX");
+            
+            System.out.println("ERROR: SAX");  
         } catch (IOException ex) {
-            //Logger.getLogger(Ejemplo.class.getName()).log(Level.SEVERE, null, ex);
+            
             System.out.println("ERROR: IO");
         }
     }
@@ -64,6 +64,10 @@ class GestionContenido extends DefaultHandler {
     public void startElement(String uri, String nombre, String nombreC, Attributes atts) throws SAXException {
         
         System.out.println("\tPrincipio elemento: "+nombre);
+        for(int i=0;i<atts.getLength();i++){  
+            System.out.println("\t\tNombre: "+atts.getQName(i));  
+            System.out.println("\t\tValor: "+atts.getValue(i));
+        }
     }
     
     @Override
@@ -77,6 +81,7 @@ class GestionContenido extends DefaultHandler {
         
         String car=new String(ch, inicio, longitud);
         car=car.replaceAll("[\t\n]", "");//Quitamos los saltos de linea
+        //car=car.replaceAll(" ", "");//Quitamos los espacios
         if(!car.isEmpty()){
             System.out.println("\tCaracteres: " + car);
         }

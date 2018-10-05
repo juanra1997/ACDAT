@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Libros>
+	<Libro ISBN="1">
+		<Titulo> El universo conocido </Titulo>
+		<Paginas> 250 </Paginas>
+		<Editorial> ED1 </Editorial>
+	</Libro>
+	<Libro ISBN="2">
+		<Titulo> El origen del universo </Titulo>
+		<Paginas> 150 </Paginas>
+		<Editorial> ED2 </Editorial>
+	</Libro>
+	<Libro ISBN="3">
+		<Titulo> El universo conocido </Titulo>
+		<Paginas> 300 </Paginas>
+		<Editorial> ED1 </Editorial>
+	</Libro>
+	<Libro ISBN="4">
+		<Titulo> El origen del universo </Titulo>
+		<Paginas> 100 </Paginas>
+		<Editorial> ED2 </Editorial>
+	</Libro>
+</Libros>
