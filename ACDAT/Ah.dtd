@@ -1,0 +1,19 @@
+<?xml encoding="UTF-8"?>
+
+<!ELEMENT Empleados (Empleado)>
+<!ATTLIST Empleados
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT Empleado (Nombre,Salario)>
+<!ATTLIST Empleado
+  xmlns CDATA #FIXED ''
+  id CDATA #REQUIRED>
+
+<!ELEMENT Nombre (#PCDATA)>
+<!ATTLIST Nombre
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT Salario (#PCDATA)>
+<!ATTLIST Salario
+  xmlns CDATA #FIXED ''
+  comision CDATA #REQUIRED>
