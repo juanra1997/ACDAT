@@ -4,7 +4,7 @@
 		<xjc-options>
 		</xjc-options>
 		<schema-sources>
-			<schema-source location='xml-resources/jaxb/albaranBinding/albaran.xsd' origLocation='../../../../Desktop/albaran.xsd'/>
+			<schema-source location='xml-resources/jaxb/albaranBinding/albaran.xsd' origLocation='albaran.xsd'/>
 		</schema-sources>
 		<bindings>
 		</bindings>
