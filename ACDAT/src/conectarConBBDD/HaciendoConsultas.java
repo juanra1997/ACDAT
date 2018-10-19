@@ -44,7 +44,7 @@ public class HaciendoConsultas {
             //-----------------------------------------------------------------------------------
             // Connection con=(Connection) DriverManager.getConnection(url, user, password);
             //-----------------------------------------------------------------------------------
-            System.out.println("Conexion establecida con exito");
+            System.out.println("Conexion establecida con exito\n");
             //PreparedStatement stmt = con.prepareStatement("create table departamentos(dept_no tinyint(2) not null primary key, dnombre varchar(15), loc varchar(15))");
             /*stmt.execute();
              stmt.close();
@@ -56,9 +56,9 @@ public class HaciendoConsultas {
             //System.out.println("Datos introducidos");
             result = sentencia.executeQuery(consulta);
             while (result.next()) {
-                System.out.println(System.out.printf("%2d %-15s %s\n", result.getInt(1), result.getString("dnombre"), result.getString(3)));  
+                System.out.printf("%2d %-15s %s\n", result.getInt(1), result.getString("dnombre"), result.getString(3));  
             }
-            System.out.println("\nTabla 'departamentos' consultada correctamente");
+            System.out.println("\nTabla 'departamentos' consultada correctamente\n");
         } catch (SQLException e) {
             System.out.println("SQL Exception: " + e.toString());
         } catch (ClassNotFoundException cE) {
