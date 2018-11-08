@@ -115,9 +115,7 @@ public class ConversionDOM {
             }
             Transformer transformer = TransformerFactory.newInstance().newTransformer();
             transformer.transform(source, result);
-            /*}catch(IOException io){
-             System.out.println("error de lectura escritura");
-             io.printStackTrace();*/
+
         } catch (Exception ex) {
             System.out.println("error");
             ex.printStackTrace();

@@ -1,32 +1,22 @@
 <Departamentos>
   <Departamento>
     <ID>101</ID>
-    <Tipo>Tos</Tipo>
-    <Nombre>Tus</Nombre>
-    <Domicilio>Muertos</Domicilio>
-    <Ciudad>Punto</Ciudad>
-    <CP>Com</CP>
+    <Tipo>Cultura</Tipo>
+    <Nombre>Sociales</Nombre>
+    <Domicilio>Tombola 10</Domicilio>
+    <Ciudad>Puerto Lumbreras</Ciudad>
+    <CP>30890</CP>
     <Provincia>Murcia</Provincia>
-    <Pais>Estonia</Pais>
-  </Departamento>
-  <Departamento>
-    <ID>103</ID>
-    <Tipo>Asco</Tipo>
-    <Nombre>De</Nombre>
-    <Domicilio>Vida</Domicilio>
-    <Ciudad>Monguer</Ciudad>
-    <CP>Acho</CP>
-    <Provincia>Almeria</Provincia>
     <Pais>Espanna</Pais>
   </Departamento>
   <Departamento>
-    <ID>105</ID>
-    <Tipo>Prueba</Tipo>
-    <Nombre>ACDAT</Nombre>
-    <Domicilio>Insti</Domicilio>
+    <ID>103</ID>
+    <Tipo>Logica</Tipo>
+    <Nombre>Matematicas</Nombre>
+    <Domicilio>Tierra 1</Domicilio>
     <Ciudad>Almeria</Ciudad>
     <CP>04008</CP>
-    <Provincia>Galicia</Provincia>
-    <Pais>Holanda</Pais>
+    <Provincia>Almeria</Provincia>
+    <Pais>Espanna</Pais>
   </Departamento>
 </Departamentos>
