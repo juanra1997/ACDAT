@@ -70,7 +70,5 @@ public class ConversionXStream {
         } catch (FileNotFoundException e1) {
             e1.printStackTrace();
         }
-
-    //-------------------------------------------------------------------------------------------------------------
     }
 }
