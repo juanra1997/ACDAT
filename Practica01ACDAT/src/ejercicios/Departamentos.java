@@ -27,4 +27,9 @@ public class Departamentos {
 
         lista.add(d);
     }
+
+    public List<Departamento> getLista() {
+        return lista;
+    }
+    
 }
