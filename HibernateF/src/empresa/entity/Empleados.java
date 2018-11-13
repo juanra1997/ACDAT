@@ -1,5 +1,5 @@
 package empresa.entity;
-// Generated 13-nov-2018 10:04:09 by Hibernate Tools 4.3.1
+// Generated 13-nov-2018 10:00:47 by Hibernate Tools 4.3.1
 
 
 import java.util.Date;

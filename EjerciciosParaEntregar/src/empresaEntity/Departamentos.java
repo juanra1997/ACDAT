@@ -1,5 +1,5 @@
-package empresa.entity;
-// Generated 13-nov-2018 10:04:09 by Hibernate Tools 4.3.1
+package empresaEntity;
+// Generated 12-nov-2018 17:03:11 by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;

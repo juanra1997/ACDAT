@@ -7,9 +7,9 @@
     <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/empresa?zeroDateTimeBehavior=convertToNull</property>
     <property name="hibernate.connection.username">root</property>
     <property name="hibernate.connection.password">juanra</property>
-    <property name="hibernate.query.factory_class">org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory</property>
     <property name="hibernate.show_sql">true</property>
-    <mapping resource="empresa/entity/Departamentos.hbm.xml"/>
+    <property name="hibernate.query.factory_class">org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory</property>
     <mapping resource="empresa/entity/Empleados.hbm.xml"/>
+    <mapping resource="empresa/entity/Departamentos.hbm.xml"/>
   </session-factory>
 </hibernate-configuration>
