@@ -12,6 +12,9 @@ package mainpackage;
 public class LoPrimero {
     
 }
+
+//Si da algun error, cambia la contraseña
+
 //Lo primero que hay que hacer es añadir la libreria del conector
 
 //Recordar que executeUpdate devuelve un entero en el cual nos indica el numero de columnas afectadas
