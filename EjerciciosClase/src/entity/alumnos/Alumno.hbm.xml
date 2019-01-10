@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 19-nov-2018 22:51:27 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="entity.alumnos.Alumno" table="alumno" catalog="alumnos" optimistic-lock="version">
+        <id name="dni" type="string">
+            <column name="dni" length="9" />
+            <generator class="assigned" />
+        </id>
+        <property name="nombre" type="string">
+            <column name="nombre" length="45" />
+        </property>
+        <property name="edad" type="java.lang.Integer">
+            <column name="edad" />
+        </property>
+        <property name="beca" type="string">
+            <column name="beca" length="2" />
+        </property>
+        <set name="matriculas" table="matricula" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="dni" length="9" not-null="true" />
+            </key>
+            <one-to-many class="entity.alumnos.Matricula" />
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 19-nov-2018 22:51:27 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="entity.alumnos.Asignatura" table="asignatura" catalog="alumnos" optimistic-lock="version">
+        <id name="asg" type="int">
+            <column name="asg" />
+            <generator class="assigned" />
+        </id>
+        <property name="nombre" type="string">
+            <column name="nombre" length="45" />
+        </property>
+        <property name="ct" type="java.lang.Integer">
+            <column name="ct" />
+        </property>
+        <property name="cp" type="java.lang.Integer">
+            <column name="cp" />
+        </property>
+        <set name="matriculas" table="matricula" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="asg" not-null="true" />
+            </key>
+            <one-to-many class="entity.alumnos.Matricula" />
+        </set>
+    </class>
+</hibernate-mapping>
